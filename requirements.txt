@@ -1,0 +1,2 @@
+streamlit
+google-genai>=2.12.1,<3
