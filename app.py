@@ -351,9 +351,27 @@ if st.session_state.get("pending_question"):
                     "content": answer
                 })
 
-           except Exception as e:
+          
+try:
+    response = client.interactions.create(
+        model=MODEL_NAME,
+        input=conversation,
+        system_instruction=SYSTEM_PROMPT
+    )
+
+    reply = response.output_text
+    st.session_state.messages.append({
+        "role": "assistant",
+        "content": reply
+    })
+
+    with st.chat_message("assistant"):
+        st.markdown(reply)
+
+except Exception as e:
     st.error("AI Service Error:")
     st.code(str(e))
+
 
 # ---------------- FOOTER ----------------
 
