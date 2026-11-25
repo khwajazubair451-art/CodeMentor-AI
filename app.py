@@ -326,17 +326,14 @@ if st.session_state.get("pending_question"):
 
         with st.spinner("🧠 CodeMentor AI is thinking..."):
 
+            
             try:
                 client = get_client()
 
                 response = client.interactions.create(
                     model=MODEL_NAME,
                     input=conversation,
-                    system_instruction=SYSTEM_PROMPT,
-                    generation_config={
-                        "temperature": TEMPERATURE,
-                        "max_output_tokens": MAX_OUTPUT_TOKENS
-                    }
+                    system_instruction=SYSTEM_PROMPT
                 )
 
                 answer = response.output_text
@@ -351,26 +348,10 @@ if st.session_state.get("pending_question"):
                     "content": answer
                 })
 
-          
-try:
-    response = client.interactions.create(
-        model=MODEL_NAME,
-        input=conversation,
-        system_instruction=SYSTEM_PROMPT
-    )
+            except Exception as e:
+                st.error("AI Service Error:")
+                st.code(str(e))
 
-    reply = response.output_text
-    st.session_state.messages.append({
-        "role": "assistant",
-        "content": reply
-    })
-
-    with st.chat_message("assistant"):
-        st.markdown(reply)
-
-except Exception as e:
-    st.error("AI Service Error:")
-    st.code(str(e))
 
 
 # ---------------- FOOTER ----------------
