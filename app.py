@@ -143,6 +143,49 @@ st.markdown("""
     padding: 25px 0;
     font-size: 13px;
 }
+
+/* Make all text fields readable */
+[data-testid="stChatInput"] textarea,
+[data-testid="stTextInput"] input,
+[data-testid="stTextArea"] textarea,
+[data-testid="stNumberInput"] input {
+    color: #FFFFFF !important;
+    background-color: #172554 !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+    caret-color: #FFFFFF !important;
+}
+
+/* Input placeholder text */
+[data-testid="stChatInput"] textarea::placeholder,
+[data-testid="stTextInput"] input::placeholder,
+[data-testid="stTextArea"] textarea::placeholder {
+    color: #CBD5E1 !important;
+    opacity: 1 !important;
+}
+
+/* Labels and general text */
+[data-testid="stWidgetLabel"],
+.stTextInput label,
+.stTextArea label {
+    color: #FFFFFF !important;
+}
+
+/* Chat messages */
+[data-testid="stChatMessage"] {
+    color: #FFFFFF !important;
+}
+
+/* Sidebar text */
+[data-testid="stSidebar"] {
+    color: #FFFFFF !important;
+}
+
+/* Select boxes */
+[data-testid="stSelectbox"] div,
+[data-testid="stSelectbox"] span {
+    color: #FFFFFF !important;
+}
+
 </style>
 """, unsafe_allow_html=True)
 
