@@ -207,10 +207,13 @@ st.markdown("""
     color: #FFFFFF !important;
 }
 
-/* Code blocks */
+/* Code blocks - dark text on white background */
 [data-testid="stChatMessage"] pre,
+[data-testid="stChatMessage"] pre code,
 [data-testid="stChatMessage"] code {
-    color: #E2E8F0 !important;
+    color: #000000 !important;
+    -webkit-text-fill-color: #000000 !important;
+    background-color: #FFFFFF !important;
 }
 
 /* General text colour */
