@@ -351,11 +351,9 @@ if st.session_state.get("pending_question"):
                     "content": answer
                 })
 
-            except Exception:
-                st.error(
-                    "The AI service is temporarily unavailable. "
-                    "Please try again shortly."
-                )
+           except Exception as e:
+    st.error("AI Service Error:")
+    st.code(str(e))
 
 # ---------------- FOOTER ----------------
 
