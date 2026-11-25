@@ -186,6 +186,41 @@ st.markdown("""
     color: #FFFFFF !important;
 }
 
+/* Make chatbot response text white */
+[data-testid="stChatMessage"] p,
+[data-testid="stChatMessage"] li,
+[data-testid="stChatMessage"] span,
+[data-testid="stChatMessage"] div,
+.stMarkdown,
+.stMarkdown p,
+.stMarkdown li,
+.stMarkdown strong,
+.stMarkdown em {
+    color: #FFFFFF !important;
+}
+
+/* Headings */
+[data-testid="stChatMessage"] h1,
+[data-testid="stChatMessage"] h2,
+[data-testid="stChatMessage"] h3,
+[data-testid="stChatMessage"] h4 {
+    color: #FFFFFF !important;
+}
+
+/* Code blocks */
+[data-testid="stChatMessage"] pre,
+[data-testid="stChatMessage"] code {
+    color: #E2E8F0 !important;
+}
+
+/* General text colour */
+body,
+p,
+label {
+    color: #FFFFFF;
+}
+
+
 </style>
 """, unsafe_allow_html=True)
 
